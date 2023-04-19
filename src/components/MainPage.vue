@@ -34,7 +34,9 @@
             </span>
             <p class="footer">
               Copyright © 2022 WhiteSnow00
-            </p>  
+            </p>
+
+            <!-- Add the contact buttons -->
             <div>
               <nav class="cover-navigation navigation--social">
                 <ul class="navigation">
@@ -93,6 +95,7 @@
                 </ul>
               </nav>
             </div>
+            
           </div>
         </div>
       </div>

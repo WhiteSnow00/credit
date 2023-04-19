@@ -3,6 +3,8 @@ import App from './App.vue';
 import router from './router';
 import $ from 'jquery';
 
+
+
 window.$ = $;
 window.jQuery = $;
 

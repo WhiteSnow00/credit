@@ -1,21 +1,33 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module"
-  },
   "env": {
     "browser": true,
     "es6": true,
     "node": true
   },
-  "plugins": [
-    "vue"
-  ],
   "extends": [
     "eslint:recommended",
-    "plugin:vue/essential"
+    "plugin:vue/recommended"
   ],
+  "globals": {
+    "jQuery": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "rules": {
-    // Your custom rules, if any
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
   }
 }

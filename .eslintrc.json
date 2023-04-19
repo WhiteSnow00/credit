@@ -1,0 +1,21 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "vue"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/essential"
+  ],
+  "rules": {
+    // Your custom rules, if any
+  }
+}

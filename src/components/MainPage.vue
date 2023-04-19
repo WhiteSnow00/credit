@@ -15,6 +15,7 @@
               <p class="panel-cover__description">非営利の性的コンテンツ チャンネル</p>
               <hr class="panel-cover__divider">
               <p class="panel-cover__description">ここには何もない</p>
+            </span>
             <p class="footer">Copyright © 2022 WhiteSnow00</p>  
             <div>
               <nav class="cover-navigation navigation--social">
@@ -55,7 +56,6 @@
 </template>
 
 <script>
-import $ from "jquery";
 import "@/assets/js/main.js";
 
 export default {

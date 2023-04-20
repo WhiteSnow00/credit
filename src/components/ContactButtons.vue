@@ -1,28 +1,54 @@
 <template>
-  <div class="contact-buttons">
-    <ul class="navigation">
-      <li class="navigation__item">
-        <a target="_blank" :href="facebookUrl" title="Facebook">
-          <i class="social fab fa-facebook"></i>
-        </a>
-      </li>
-      <li class="navigation__item">
-        <a target="_blank" :href="telegramUrl" title="Telegram">
-          <i class="social fab fa-telegram"></i>
-        </a>
-      </li>
-      <li class="navigation__item">
-        <a target="_blank" :href="githubUrl" title="GitHub">
-          <i class="social fab fa-github"></i>
-        </a>
-      </li>
-      <li class="navigation__item">
-        <a target="_blank" :href="'mailto:' + emailAddress" title="Email">
-          <i class="social fa fa-envelope"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <ul class="navigation">
+    <li class="navigation__item">
+      <a
+        :href="facebookLink"
+        target="_blank"
+        title="私のフェイスブック"
+      >
+        <i
+          class="social fab fa-facebook"
+          style="color:rgb(149, 231, 241)"
+        />
+      </a>
+    </li>
+    <li class="navigation__item">
+      <a
+        :href="telegramLink"
+        target="_blank"
+        title="テレグラム"
+      >
+        <i
+          class="social fab fa-telegram"
+          style="color:rgb(133, 161, 214)"
+        />
+      </a>
+    </li>
+    <li class="navigation__item">
+      <a
+        :href="githubLink"
+        target="_blank"
+        title="ギットハブ"
+      >
+        <i
+          class="social fab fa-github"
+          style="color:rgb(77, 77, 77)"
+        />
+      </a>
+    </li>
+    <li class="navigation__item">
+      <a
+        :href="emailLink"
+        target="_blank"
+        title="メールアドレス"
+      >
+        <i
+          class="social fa fa-envelope"
+          style="color:rgb(191, 146, 241)"
+        />
+      </a>
+    </li>
+  </ul>
 </template>
 
 <script>

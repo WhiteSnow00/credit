@@ -123,16 +123,31 @@ export default {
         require('@/assets/images/9.jpg'),
         require('@/assets/images/10.jpg'),
       ],
+      shuffledBg: [],
       currentBg: '',
+      currentIndex: 0,
     };
   },
   mounted() {
+    this.shuffleBg();
     this.randomBg();
   },
   methods: {
+    shuffleBg() {
+      const shuffled = [...this.bg];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      this.shuffledBg = shuffled;
+    },
     randomBg() {
-      const randomBgIndex = Math.floor(Math.random() * this.bg.length);
-      this.currentBg = this.bg[randomBgIndex];
+      this.currentBg = this.shuffledBg[this.currentIndex];
+      this.currentIndex++;
+      if (this.currentIndex === this.shuffledBg.length) {
+        this.shuffleBg();
+        this.currentIndex = 0;
+      }
     },
   },
 };

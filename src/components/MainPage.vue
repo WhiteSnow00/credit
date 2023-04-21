@@ -11,6 +11,7 @@
 
     <div
       ref="bgImage"
+      v-lazy="currentBg"
       class="panel-cover"
       :style="{'background-image': 'url(' + currentBg + ')'}"
     >
@@ -172,16 +173,23 @@ export default {
 </script>
 
 <style scoped>
-.bg-image {
-  animation: fade-in 2s linear;
+.tab {
+  position: relative;
+  overflow: hidden;
+}
+.tab:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 4px;
+  background-color: #000;
+  transition: width 0.3s ease-in-out;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.tab.active:before {
+  width: 100%;
 }
 </style>
+

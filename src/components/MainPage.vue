@@ -121,6 +121,7 @@ export default {
         require('@/assets/images/7.jpg'),
         require('@/assets/images/8.jpg'),
         require('@/assets/images/9.jpg'),
+        require('@/assets/images/10.jpg'),
       ],
       currentBg: '',
     };
@@ -137,6 +138,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
-  /* Add the CSS styles here, if needed */
+	/* Add the CSS styles here, if needed */
 </style>

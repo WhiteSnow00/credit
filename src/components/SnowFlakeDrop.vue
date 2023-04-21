@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Snowflake from '../snowflake';
+import SnowflakeSVG from '@/SnowflakeSVG';
 
 export default {
   name: 'SnowDropEffect',
@@ -23,9 +23,7 @@ export default {
       const snowflakes = [];
 
       for (let i = 0; i < 200; i++) {
-        const snowflake = new Snowflake(canvas);
-        snowflake.scale *= 1.5;
-        snowflakes.push(snowflake);
+        snowflakes.push(new SnowflakeSVG(canvas));
       }
 
       function drawSnowflakes() {

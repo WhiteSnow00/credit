@@ -3,6 +3,7 @@
     <MainPage />
     <ContactButtons />
     <SnowDropEffect />
+    <SnowFlakeDrop />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import MainPage from './components/MainPage.vue';
 import ContactButtons from './components/ContactButtons.vue';
 import SnowDropEffect from './components/SnowDropEffect.vue';
+import SnowFlakeDrop from './components/SnowFlakeDrop.vue';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     MainPage,
     ContactButtons,
     SnowDropEffect,
+    SnowFlakeDrop,
   },
 };
 </script>

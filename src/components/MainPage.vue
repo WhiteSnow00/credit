@@ -10,6 +10,7 @@
     >
 
     <div
+      ref="bgImage"
       class="panel-cover"
       :style="{'background-image': 'url(' + currentBg + ')'}"
     >
@@ -123,29 +124,46 @@ export default {
         require('@/assets/images/9.jpg'),
         require('@/assets/images/10.jpg'),
       ],
-      shuffledBg: [],
+      randomIndices: [],
       currentBg: '',
       currentIndex: 0,
     };
   },
   mounted() {
-    this.shuffleBg();
+    this.generateRandomIndices();
     this.randomBg();
   },
   methods: {
-    shuffleBg() {
-      const shuffled = [...this.bg];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    generateRandomIndices() {
+      const indices = [...Array(this.bg.length).keys()];
+      let currentIndex = indices.length;
+      let temporaryValue, randomIndex;
+
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = indices[currentIndex];
+        indices[currentIndex] = indices[randomIndex];
+        indices[randomIndex] = temporaryValue;
       }
-      this.shuffledBg = shuffled;
+
+      if (this.randomIndices.length > 0 && indices[0] === this.randomIndices[this.randomIndices.length - 1]) {
+        const swapIndex = Math.floor(Math.random() * (indices.length - 1)) + 1;
+        [indices[0], indices[swapIndex]] = [indices[swapIndex], indices[0]];
+      }
+
+      this.randomIndices = indices;
     },
     randomBg() {
-      this.currentBg = this.shuffledBg[this.currentIndex];
+      const bgIndex = this.randomIndices[this.currentIndex];
+      this.currentBg = this.bg[bgIndex];
+      this.$refs.bgImage.classList.remove('fade-in');
+      void this.$refs.bgImage.offsetWidth;
+      this.$refs.bgImage.classList.add('fade-in');
       this.currentIndex++;
-      if (this.currentIndex === this.shuffledBg.length) {
-        this.shuffleBg();
+      if (this.currentIndex === this.randomIndices.length) {
+        this.generateRandomIndices();
         this.currentIndex = 0;
       }
     },
@@ -153,7 +171,17 @@ export default {
 };
 </script>
 
-
 <style scoped>
-	/* Add the CSS styles here, if needed */
+.bg-image {
+  animation: fade-in 2s linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>

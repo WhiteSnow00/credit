@@ -1,7 +1,10 @@
 <!-- src/components/SnowDropEffect.vue -->
 
 <template>
-  <canvas ref="canvas" class="snowdrop"></canvas>
+  <canvas 
+    ref="canvas"
+    class="snowdrop"
+  />
 </template>
 
 <script>
